@@ -11,15 +11,19 @@ const NavBar = () => {
   return (
     <nav className={styles.navbox}>
       <div className={styles.container}>
-        <Logo />
-        <div className={styles.container}>
-          <DesktopMenuLink text="snow reports" url="/" active={false} />
-          <DesktopMenuLink text="trip planning" url="/" active={true} />
-          <DesktopMenuLink text="magazine" url="/" active={false} />
+        <div className={styles.nav_group}>
+          <Logo />
+          <div className={styles.link_group}>
+            <DesktopMenuLink text="snow reports" url="/" active={false} />
+            <DesktopMenuLink text="trip planning" url="/" active={true} />
+            <DesktopMenuLink text="magazine" url="/" active={false} />
+          </div>
         </div>
-        <div className={styles.container}>
+        <div className={styles.nav_group}>
           <SearchBar />
-          <LanguagePicker />
+          <div className={styles.lang_pick_spacer}>
+            <LanguagePicker />
+          </div>
         </div>
       </div>
     </nav>

@@ -1,9 +1,17 @@
 .navbox {
-  height: 75px;
+  display: flex;
+  justify-content: center;
 }
 
 .container {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1320px;
+}
+
+.link_group {
+  margin-left: 60px;
 }
 
 @mixin menulink() {
@@ -29,6 +37,12 @@
   @include menulink;
   font-weight: 600;
   color: #11abd8;
+}
+
+.nav_group {
+  display: flex;
+  height: 75px;
+  align-items: center;
 }
 
 .searchbar {
@@ -61,6 +75,11 @@
       }
     }
   }
+}
+
+.lang_pick_spacer {
+  margin-left: 39px;
+  margin-right: 19px;
 }
 
 .lang_picker {
