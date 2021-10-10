@@ -30,3 +30,35 @@
   font-weight: 600;
   color: #11abd8;
 }
+
+.searchbar {
+  display: flex;
+  height: 45px;
+  border: 1px solid rgba(28, 28, 28, 0.2);
+  border-radius: 5px;
+
+  input {
+    padding: 0 1rem;
+    border: none;
+    height: 45px;
+    line-height: 45px;
+    appearance: none;
+    background: none;
+  }
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+
+    svg {
+      fill: #aaa;
+      vertical-align: middle;
+      height: 1.25rem;
+      &:hover {
+        fill: #006fac;
+      }
+    }
+  }
+}
