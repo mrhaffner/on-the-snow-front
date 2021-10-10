@@ -1,5 +1,6 @@
 import styles from './styles.module.scss';
 
+//add search popup
 const SearchBar = () => {
   return (
     <form className={styles.searchbar}>

@@ -1,7 +1,9 @@
+import BurgerMenu from './BurgerMenu';
 import DesktopMenuLink from './DesktopMenuLink';
 import LanguagePicker from './LanguagePicker';
 import Logo from './Logo';
 import SearchBar from './SearchBar';
+import SearchToggle from './SearchToggle';
 import styles from './styles.module.scss';
 
 //eventually needs state to control what links are active
@@ -24,6 +26,8 @@ const NavBar = () => {
           <div className={styles.lang_pick_spacer}>
             <LanguagePicker />
           </div>
+          <SearchToggle />
+          <BurgerMenu />
         </div>
       </div>
     </nav>

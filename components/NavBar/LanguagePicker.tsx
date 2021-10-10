@@ -1,5 +1,6 @@
 import styles from './styles.module.scss';
 
+//can maybe add the option to choose between english speaking flags lol
 const LanguagePicker = () => {
   return (
     <div className={styles.lang_picker}>
