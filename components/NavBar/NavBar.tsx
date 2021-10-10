@@ -1,6 +1,6 @@
 import DesktopMenuLink from './DesktopMenuLink';
 import Logo from './Logo';
-import styles from './style.module.scss';
+import styles from './styles.module.scss';
 
 const NavBar = () => {
   return (
@@ -9,7 +9,7 @@ const NavBar = () => {
         <Logo />
         <div className={styles.container}>
           <DesktopMenuLink text="snow reports" url="/" active={false} />
-          <DesktopMenuLink text="trip planning" url="/" active={false} />
+          <DesktopMenuLink text="trip planning" url="/" active={true} />
           <DesktopMenuLink text="magazine" url="/" active={false} />
         </div>
       </div>

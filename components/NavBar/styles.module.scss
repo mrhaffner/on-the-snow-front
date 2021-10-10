@@ -1,0 +1,32 @@
+.navbox {
+  height: 75px;
+}
+
+.container {
+  display: flex;
+}
+
+@mixin menulink() {
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  padding: 0 1.5rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus-visible {
+    outline-offset: 1px;
+  }
+}
+
+.menulink {
+  @include menulink;
+  color: #005889;
+}
+
+.menulink_current {
+  @include menulink;
+  font-weight: 600;
+  color: #11abd8;
+}

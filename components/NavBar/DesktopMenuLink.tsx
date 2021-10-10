@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styles from './style.module.scss';
+import styles from './styles.module.scss';
 
 interface Props {
   url: string;
@@ -10,7 +10,9 @@ interface Props {
 const DesktopMenuLink = ({ url, text, active }: Props) => {
   return (
     <Link href={url}>
-      <a className={styles.menulink}>{text}</a>
+      <a className={active ? styles.menulink_current : styles.menulink}>
+        {text}
+      </a>
     </Link>
   );
 };
