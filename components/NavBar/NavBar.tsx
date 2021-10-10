@@ -1,4 +1,5 @@
 import DesktopMenuLink from './DesktopMenuLink';
+import LanguagePicker from './LanguagePicker';
 import Logo from './Logo';
 import SearchBar from './SearchBar';
 import styles from './styles.module.scss';
@@ -18,6 +19,7 @@ const NavBar = () => {
         </div>
         <div className={styles.container}>
           <SearchBar />
+          <LanguagePicker />
         </div>
       </div>
     </nav>

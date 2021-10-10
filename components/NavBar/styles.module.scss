@@ -62,3 +62,34 @@
     }
   }
 }
+
+.lang_picker {
+  display: flex;
+  height: 45px;
+  border: 1px solid rgba(28, 28, 28, 0.2);
+  border-radius: 5px;
+  font-size: 0.875rem;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #232323;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  &:hover {
+    color: #304769;
+    text-decoration: underline;
+  }
+
+  img {
+    vertical-align: middle;
+  }
+
+  span {
+    padding-left: 0.5rem;
+    line-height: 21px;
+  }
+}
