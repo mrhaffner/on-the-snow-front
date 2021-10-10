@@ -1,7 +1,6 @@
-import type { NextPage } from 'next';
 import Link from 'next/link';
 
-const Logo: NextPage = () => {
+const Logo = () => {
   return (
     <Link href="/">
       <a>
