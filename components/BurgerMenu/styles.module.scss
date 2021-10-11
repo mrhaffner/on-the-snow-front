@@ -1,0 +1,9 @@
+@import '../../styles/mixins';
+
+.burger {
+  @include menu_btn();
+
+  svg {
+    height: 20px;
+  }
+}

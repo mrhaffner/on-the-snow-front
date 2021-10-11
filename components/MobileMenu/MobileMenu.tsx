@@ -1,4 +1,4 @@
-import BurgerMenu from './BurgerMenu';
+import BurgerMenu from '../BurgerMenu';
 import MobileMenuLink from './MobileMenuLink';
 import styles from './styles.module.scss';
 

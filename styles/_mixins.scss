@@ -29,3 +29,29 @@
     max-width: 1320px;
   }
 }
+
+@mixin a_states() {
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus-visible {
+    outline-offset: 1px;
+  }
+}
+
+@mixin menu_btn() {
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    fill: #006fac;
+  }
+
+  @media (min-width: 992px) {
+    display: none;
+  }
+}
