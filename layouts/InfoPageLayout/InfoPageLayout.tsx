@@ -9,7 +9,12 @@ const InfoPageLayout = ({ children }: Props) => {
   return (
     <>
       <NavBar />
-      <div className={styles.container}>{children}</div>
+      <div className={styles.container}>
+        <div className={styles.layout}>
+          <section className={styles.main}>{children}</section>
+          <aside className={styles.aside}></aside>
+        </div>
+      </div>
     </>
   );
 };

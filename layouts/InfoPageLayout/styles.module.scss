@@ -3,3 +3,52 @@
 .container {
   @include container();
 }
+
+.layout {
+  display: flex;
+
+  @media (min-width: 992px) {
+    padding-top: 1.5rem !important;
+  }
+
+  @media (max-width: 991.98px) {
+    display: block;
+  }
+
+  .pt-0 {
+    padding-top: 0 !important;
+  }
+}
+
+.main {
+  flex: 1 1;
+
+  @media (max-width: 991.98px) {
+    margin-bottom: 20px;
+  }
+}
+
+.aside {
+  width: 365px;
+  margin-left: 74px;
+  flex-shrink: 0;
+
+  @media (max-width: 1199.98px) {
+    width: auto;
+    min-width: 160px;
+    margin-left: 20px;
+    flex-shrink: 1;
+  }
+  @media (max-width: 1399.98px) {
+    width: auto;
+    min-width: 300px;
+    margin-left: 50px;
+  }
+
+  @media (max-width: 991.98px) {
+    width: auto;
+    min-width: 0;
+    margin-left: 10px;
+    flex-shrink: 1;
+  }
+}
