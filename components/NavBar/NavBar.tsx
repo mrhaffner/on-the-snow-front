@@ -2,6 +2,7 @@ import BurgerMenu from './BurgerMenu';
 import DesktopMenuLink from './DesktopMenuLink';
 import LanguagePicker from './LanguagePicker';
 import Logo from './Logo';
+import MobileMenu from './MobileMenu';
 import SearchBar from './SearchBar';
 import SearchToggle from './SearchToggle';
 import styles from './styles.module.scss';
@@ -30,6 +31,7 @@ const NavBar = () => {
           <BurgerMenu />
         </div>
       </div>
+      <MobileMenu />
     </nav>
   );
 };
