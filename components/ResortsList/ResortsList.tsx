@@ -1,6 +1,5 @@
-import Link from 'next/link';
 import useToggle from '../../hooks/useToggle';
-import { makeSlug } from '../../utilities/makeSlug';
+import ResortsColumn from './ResortsColumn';
 import styles from './styles.module.scss';
 
 const resorts1 = [
@@ -99,8 +98,6 @@ const resorts2 = [
 
 const title = 'All Resorts';
 
-const link = '/';
-
 const buttonText = 'View All resorts';
 
 const ResortsList = () => {
@@ -116,20 +113,8 @@ const ResortsList = () => {
             <h3>{title}</h3>
           </div>
           <div className={styles.resort_list}>
-            <div className={styles.column}>
-              {res1.map((name: string) => (
-                <Link href={makeSlug(name)} key={name}>
-                  <a className={styles.resort_link}>{name}</a>
-                </Link>
-              ))}
-            </div>
-            <div className={styles.column}>
-              {res2.map((name: string) => (
-                <Link href={makeSlug(name)} key={name}>
-                  <a className={styles.resort_link}>{name}</a>
-                </Link>
-              ))}
-            </div>
+            <ResortsColumn resortsList={res1} />
+            <ResortsColumn resortsList={res2} />
           </div>
         </article>
         {!showMoreResorts && (
