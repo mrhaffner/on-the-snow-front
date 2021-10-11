@@ -206,13 +206,9 @@
   }
 }
 
-.mobile_menu {
-  opacity: 1;
-  bottom: 0;
+@mixin mobile_menu() {
   position: fixed;
   top: 0;
-  // bottom: 100%;
-  // opacity: 0;
   overflow: hidden;
   left: 0;
   right: 0;
@@ -224,6 +220,18 @@
   justify-content: center;
   -webkit-transition: bottom 0.2s ease, opacity 0.2s ease;
   transition: bottom 0.2s ease, opacity 0.2s ease;
+}
+
+.mobile_menu_hidden {
+  @include mobile_menu();
+  bottom: 100%;
+  opacity: 0;
+}
+
+.mobile_menu {
+  @include mobile_menu();
+  opacity: 1;
+  bottom: 0;
 }
 
 .mobile_nav {

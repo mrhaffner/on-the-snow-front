@@ -1,3 +1,4 @@
+import useToggle from '../../hooks/useToggle';
 import BurgerMenu from './BurgerMenu';
 import DesktopMenuLink from './DesktopMenuLink';
 import LanguagePicker from './LanguagePicker';
@@ -11,6 +12,8 @@ import styles from './styles.module.scss';
 //there will never be a working Magazine
 
 const NavBar = () => {
+  const [showMobileMenu, toggleMobileMenu] = useToggle();
+
   return (
     <nav className={styles.navbox}>
       <div className={styles.container}>
@@ -28,10 +31,13 @@ const NavBar = () => {
             <LanguagePicker />
           </div>
           <SearchToggle />
-          <BurgerMenu />
+          <BurgerMenu toggleMobileMenu={toggleMobileMenu} />
         </div>
       </div>
-      <MobileMenu />
+      <MobileMenu
+        toggleMobileMenu={toggleMobileMenu}
+        showMobileMenu={showMobileMenu}
+      />
     </nav>
   );
 };
