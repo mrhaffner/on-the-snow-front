@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import ResortsList from '../components/ResortsList';
 import InfoPageLayout from '../layouts/InfoPageLayout';
 import styles from '../styles/Home.module.css';
 
@@ -12,7 +13,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <InfoPageLayout>
-        <div></div>
+        <ResortsList />
       </InfoPageLayout>
     </div>
   );
