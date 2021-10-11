@@ -144,3 +144,9 @@
     height: 25px;
   }
 }
+
+.logo {
+  @media (max-width: 767.98px) {
+    margin-left: 10px;
+  }
+}

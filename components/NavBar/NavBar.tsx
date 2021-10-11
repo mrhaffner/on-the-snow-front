@@ -32,7 +32,7 @@ const NavBar = () => {
           <div className={styles.lang_pick_spacer}>
             <LanguagePicker />
           </div>
-          <SearchToggle />
+          <SearchToggle toggleSearchPopUp={toggleSearchPopUp} />
           <BurgerMenu toggleMobileMenu={toggleMobileMenu} />
         </div>
       </div>

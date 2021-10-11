@@ -1,9 +1,10 @@
 import Link from 'next/link';
+import styles from './styles.module.scss';
 
 const Logo = () => {
   return (
     <Link href="/">
-      <a>
+      <a className={styles.logo}>
         <svg
           width="132"
           height="42"
