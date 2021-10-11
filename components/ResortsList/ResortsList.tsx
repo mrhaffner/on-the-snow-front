@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import useToggle from '../../hooks/useToggle';
+import { makeSlug } from '../../utilities/makeSlug';
 import styles from './styles.module.scss';
 
 const resorts1 = [
@@ -117,14 +118,14 @@ const ResortsList = () => {
           <div className={styles.resort_list}>
             <div className={styles.column}>
               {res1.map((name: string) => (
-                <Link href={link} key={name}>
+                <Link href={makeSlug(name)} key={name}>
                   <a className={styles.resort_link}>{name}</a>
                 </Link>
               ))}
             </div>
             <div className={styles.column}>
               {res2.map((name: string) => (
-                <Link href={link} key={name}>
+                <Link href={makeSlug(name)} key={name}>
                   <a className={styles.resort_link}>{name}</a>
                 </Link>
               ))}
