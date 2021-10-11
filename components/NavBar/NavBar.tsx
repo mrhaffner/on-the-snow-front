@@ -1,4 +1,5 @@
 import useToggle from '../../hooks/useToggle';
+import SearchPopUp from '../SearchPopUp';
 import BurgerMenu from './BurgerMenu';
 import DesktopMenuLink from './DesktopMenuLink';
 import LanguagePicker from './LanguagePicker';
@@ -13,6 +14,7 @@ import styles from './styles.module.scss';
 
 const NavBar = () => {
   const [showMobileMenu, toggleMobileMenu] = useToggle();
+  const [showSearchPopUp, toggleSearchPopUp] = useToggle();
 
   return (
     <nav className={styles.navbox}>
@@ -26,7 +28,7 @@ const NavBar = () => {
           </div>
         </div>
         <div className={styles.nav_group}>
-          <SearchBar />
+          <SearchBar toggleSearchPopUp={toggleSearchPopUp} />
           <div className={styles.lang_pick_spacer}>
             <LanguagePicker />
           </div>
@@ -38,6 +40,7 @@ const NavBar = () => {
         toggleMobileMenu={toggleMobileMenu}
         showMobileMenu={showMobileMenu}
       />
+      {showSearchPopUp && <SearchPopUp toggleSearchPopUp={toggleSearchPopUp} />}
     </nav>
   );
 };

@@ -1,0 +1,149 @@
+@import '../../styles/mixins';
+
+.search_popup {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 12;
+}
+
+.search_bg {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  opacity: 0.95;
+  z-index: -1;
+  position: absolute;
+}
+
+.header {
+  background: #006fac;
+  height: 75px;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  @include container;
+
+  @media (max-width: 767.98px) {
+    padding: 0 15px;
+  }
+
+  svg {
+    width: 22px;
+    height: 22px;
+    fill: #fff;
+    margin-right: 20px;
+    position: absolute;
+    left: -30px;
+
+    @media (max-width: 991.98px) {
+      position: static;
+      margin-right: 10px;
+    }
+  }
+}
+
+.form {
+  width: 100%;
+
+  @media (max-width: 991.98px) {
+    width: calc(100% - 22px);
+  }
+
+  input {
+    width: 100%;
+    background: inherit;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #fff;
+    font-weight: 700;
+    font-size: 1.375rem;
+    color: #fff;
+    padding: 5px 0;
+
+    @media (max-width: 767.98px) {
+      font-size: 1rem;
+    }
+
+    &::placeholder {
+      color: #fff;
+      opacity: 0.25;
+    }
+  }
+}
+
+.close_button {
+  outline: none;
+  background: inherit;
+  border: none;
+  position: absolute;
+  right: 40px;
+  top: 18px;
+  width: 12px;
+  height: 12px;
+
+  &::before {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 0;
+    left: 5px;
+    content: ' ';
+    height: 13px;
+    width: 3px;
+    background-color: #fff;
+    border: 2px;
+  }
+
+  &::after {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 0;
+    left: 5px;
+    content: ' ';
+    height: 13px;
+    width: 3px;
+    background-color: #fff;
+    border: 2px;
+  }
+
+  &:hover {
+    opacity: 0.5;
+  }
+
+  &:focus {
+    opacity: 0.5;
+  }
+
+  @media (max-width: 767.98px) {
+    right: 15px;
+  }
+}
+
+.info_text {
+  height: 100%;
+  overflow: auto;
+  text-align: left;
+  @include container;
+
+  h2 {
+    font-weight: 500;
+    font-size: 1.25rem;
+    text-align: center;
+    color: #232323;
+    margin-top: 75px;
+
+    @media (max-width: 767.98px) {
+      padding: 0 15px;
+      margin-top: 50px;
+    }
+  }
+}
