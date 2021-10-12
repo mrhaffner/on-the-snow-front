@@ -1,4 +1,5 @@
 import useToggle from '../../hooks/useToggle';
+import { getFirstHalf, getSecondHalf } from '../../utilities/arrays';
 import ResortsColumn from './ResortsColumn';
 import styles from './styles.module.scss';
 
@@ -8,10 +9,12 @@ interface Props {
 
 const ResortsList = ({ resorts }: Props) => {
   const [showMoreResorts, setShowMoreResorts] = useToggle();
-  const resorts1 = resorts.slice(0, resorts.length / 2);
-  const resorts2 = resorts.slice(resorts.length / 2, resorts.length);
-  const res1 = showMoreResorts ? resorts1 : resorts1.slice(0, 11);
-  const res2 = showMoreResorts ? resorts2 : resorts1.slice(11, 22);
+  const first22 = resorts.slice(0, 22);
+
+  const resorts1 = getFirstHalf(first22);
+  const resorts2 = getSecondHalf(first22);
+  const res1 = showMoreResorts ? getFirstHalf(resorts) : resorts1;
+  const res2 = showMoreResorts ? getSecondHalf(resorts) : resorts2;
 
   return (
     <div className={styles.hide}>
