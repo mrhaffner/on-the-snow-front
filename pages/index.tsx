@@ -1,27 +1,12 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { useEffect, useState } from 'react';
 import ResortsList from '../components/ResortsList';
+import useGetResortNames from '../hooks/axios/useGetResortNames';
 import InfoPageLayout from '../layouts/InfoPageLayout';
-import { getAllResortNames } from '../services/resortsService';
 import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
-  const [resorts, setResorts] = useState<string[] | null>(null);
-
-  useEffect(() => {
-    const getResorts = async () => {
-      try {
-        const response = await getAllResortNames();
-        console.log(response);
-
-        setResorts(response);
-      } catch (e) {
-        console.log(e);
-      }
-    };
-    getResorts();
-  }, []);
+  const [resorts] = useGetResortNames();
 
   return (
     <div>
