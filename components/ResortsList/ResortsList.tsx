@@ -2,10 +2,6 @@ import useToggle from '../../hooks/useToggle';
 import ResortsColumn from './ResortsColumn';
 import styles from './styles.module.scss';
 
-const title = 'All Resorts';
-
-const buttonText = 'View All resorts';
-
 interface Props {
   resorts: string[];
 }
@@ -22,7 +18,7 @@ const ResortsList = ({ resorts }: Props) => {
       <div className={styles.spacer}>
         <article className={styles.list_box}>
           <div className={styles.title_box}>
-            <h3>{title}</h3>
+            <h3>All Resorts</h3>
           </div>
           <div className={styles.resort_list}>
             <ResortsColumn resortsList={res1} />
@@ -35,7 +31,7 @@ const ResortsList = ({ resorts }: Props) => {
             className={styles.wide_button}
             onClick={setShowMoreResorts}
           >
-            {buttonText}
+            View All resorts
           </button>
         )}
       </div>

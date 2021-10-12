@@ -1,5 +1,5 @@
 import styles from './styles.module.scss';
-import { makeSlug } from '../../utilities/makeSlug';
+import { slugify } from '../../utilities/slug';
 import Link from 'next/link';
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 const ResortsColumn = ({ resortsList }: Props) => (
   <div className={styles.column}>
     {resortsList.map((name: string) => (
-      <Link href={`/${makeSlug(name)}`} key={name}>
+      <Link href={`/${slugify(name)}`} key={name}>
         <a className={styles.resort_link}>{name}</a>
       </Link>
     ))}
