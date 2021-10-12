@@ -2,108 +2,22 @@ import useToggle from '../../hooks/useToggle';
 import ResortsColumn from './ResortsColumn';
 import styles from './styles.module.scss';
 
-const resorts1 = [
-  '49 Degrees North',
-  'Afton Alps',
-  'Alpental',
-  'Alpine Valley',
-  'Alpine Valley Resort',
-  'Alpine Valley Ski Area',
-  'Alta Ski Area',
-  'Alyeska Resort',
-  'Andes Tower Hills Ski Area',
-  'Angel Fire Resort',
-  'Anthony Lakes Mountain Resort',
-  '49 Degrees North',
-  'Afton Alps',
-  'Alpental',
-  'Alpine Valley',
-  'Alpine Valley Resort',
-  'Alpine Valley Ski Area',
-  'Alta Ski Area',
-  'Alyeska Resort',
-  'Andes Tower Hills Ski Area',
-  'Angel Fire Resort',
-  'Anthony Lakes Mountain Resort',
-  '49 Degrees North',
-  'Afton Alps',
-  'Alpental',
-  'Alpine Valley',
-  'Alpine Valley Resort',
-  'Alpine Valley Ski Area',
-  'Alta Ski Area',
-  'Alyeska Resort',
-  'Andes Tower Hills Ski Area',
-  'Angel Fire Resort',
-  'Anthony Lakes Mountain Resort',
-  '49 Degrees North',
-  'Afton Alps',
-  'Alpental',
-  'Alpine Valley',
-  'Alpine Valley Resort',
-  'Alpine Valley Ski Area',
-  'Alta Ski Area',
-  'Alyeska Resort',
-  'Andes Tower Hills Ski Area',
-  'Angel Fire Resort',
-  'Anthony Lakes Mountain Resort',
-];
-
-const resorts2 = [
-  'Appalachian Ski Mountain',
-  'Apple Mountain',
-  'Arapahoe Basin Ski Area',
-  'Arizona Snowbowl',
-  'Aspen Snowmass',
-  'Attitash',
-  'Bear Creek Mountain Resort',
-  'Bear Mountain',
-  'Bear Valley',
-  'Beaver Creek',
-  'Beaver Mountain',
-  'Appalachian Ski Mountain',
-  'Apple Mountain',
-  'Arapahoe Basin Ski Area',
-  'Arizona Snowbowl',
-  'Aspen Snowmass',
-  'Attitash',
-  'Bear Creek Mountain Resort',
-  'Bear Mountain',
-  'Bear Valley',
-  'Beaver Creek',
-  'Beaver Mountain',
-  'Appalachian Ski Mountain',
-  'Apple Mountain',
-  'Arapahoe Basin Ski Area',
-  'Arizona Snowbowl',
-  'Aspen Snowmass',
-  'Attitash',
-  'Bear Creek Mountain Resort',
-  'Bear Mountain',
-  'Bear Valley',
-  'Beaver Creek',
-  'Beaver Mountain',
-  'Appalachian Ski Mountain',
-  'Apple Mountain',
-  'Arapahoe Basin Ski Area',
-  'Arizona Snowbowl',
-  'Aspen Snowmass',
-  'Attitash',
-  'Bear Creek Mountain Resort',
-  'Bear Mountain',
-  'Bear Valley',
-  'Beaver Creek',
-  'Beaver Mountain',
-];
-
 const title = 'All Resorts';
 
 const buttonText = 'View All resorts';
 
-const ResortsList = () => {
+interface Props {
+  resorts: string[] | null;
+}
+
+const ResortsList = ({ resorts }: Props) => {
+  if (!resorts) return <></>;
+
   const [showMoreResorts, setShowMoreResorts] = useToggle();
+  const resorts1 = resorts.slice(0, resorts.length / 2);
+  const resorts2 = resorts.slice(resorts.length / 2, resorts.length);
   const res1 = showMoreResorts ? resorts1 : resorts1.slice(0, 11);
-  const res2 = showMoreResorts ? resorts2 : resorts2.slice(0, 11);
+  const res2 = showMoreResorts ? resorts2 : resorts1.slice(11, 22);
 
   return (
     <div className={styles.hide}>
