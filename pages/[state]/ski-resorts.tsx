@@ -41,7 +41,6 @@ interface Props {
 }
 
 export const getStaticProps = async ({ params }: Props) => {
-  console.log(params);
   const { state } = params;
   const resorts = await getStateResortNames(state);
   return {
