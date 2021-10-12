@@ -7,12 +7,10 @@ const title = 'All Resorts';
 const buttonText = 'View All resorts';
 
 interface Props {
-  resorts: string[] | null;
+  resorts: string[];
 }
 
 const ResortsList = ({ resorts }: Props) => {
-  if (!resorts) return <></>;
-
   const [showMoreResorts, setShowMoreResorts] = useToggle();
   const resorts1 = resorts.slice(0, resorts.length / 2);
   const resorts2 = resorts.slice(resorts.length / 2, resorts.length);

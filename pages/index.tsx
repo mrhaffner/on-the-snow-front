@@ -1,13 +1,14 @@
-import type { NextPage } from 'next';
 import Head from 'next/head';
 import ResortsList from '../components/ResortsList';
-import useGetResortNames from '../hooks/axios/useGetResortNames';
+import { getAllResortNames } from '../services/resortsService';
 import InfoPageLayout from '../layouts/InfoPageLayout';
 import styles from '../styles/Home.module.css';
 
-const Home: NextPage = () => {
-  const [resorts] = useGetResortNames();
+interface Props {
+  resorts: string[];
+}
 
+const Home = ({ resorts }: Props) => {
   return (
     <div>
       <Head>
@@ -20,6 +21,13 @@ const Home: NextPage = () => {
       </InfoPageLayout>
     </div>
   );
+};
+
+export const getStaticProps = async () => {
+  const resorts = await getAllResortNames();
+  return {
+    props: { resorts },
+  };
 };
 
 export default Home;
