@@ -1,7 +1,9 @@
 import useToggle from '../../hooks/useToggle';
 import { ResortNameObj } from '../../types';
 import { getFirstHalf, getSecondHalf } from '../../utilities/arrays';
+import InfoCardContainer from '../InfoCardContainer';
 import ResortsColumn from './ResortsColumn';
+import ShowButton from './ShowButton';
 import styles from './styles.module.scss';
 
 interface Props {
@@ -17,29 +19,15 @@ const ResortsList = ({ resorts }: Props) => {
   const res1 = showMoreResorts ? getFirstHalf(resorts) : resorts1;
   const res2 = showMoreResorts ? getSecondHalf(resorts) : resorts2;
 
+  const Button = ShowButton({ resorts, showMoreResorts, setShowMoreResorts });
+
   return (
-    <div className={styles.hide}>
-      <div className={styles.spacer}>
-        <article className={styles.list_box}>
-          <div className={styles.title_box}>
-            <h3>All Resorts</h3>
-          </div>
-          <div className={styles.resort_list}>
-            <ResortsColumn resortsList={res1} />
-            <ResortsColumn resortsList={res2} />
-          </div>
-        </article>
-        {!showMoreResorts && resorts.length > 22 && (
-          <button
-            type="button"
-            className={styles.wide_button}
-            onClick={setShowMoreResorts}
-          >
-            View All resorts
-          </button>
-        )}
+    <InfoCardContainer title="All Resorts" button={Button}>
+      <div className={styles.resort_list}>
+        <ResortsColumn resortsList={res1} />
+        <ResortsColumn resortsList={res2} />
       </div>
-    </div>
+    </InfoCardContainer>
   );
 };
 
