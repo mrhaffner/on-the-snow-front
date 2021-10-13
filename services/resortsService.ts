@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ResortNameObj } from '../types';
+import { ResortInfo, ResortNameObj } from '../types';
 import { slugify } from '../utilities/slug';
 
 const baseUrl = 'http://127.0.0.1:5000/resorts';
@@ -24,6 +24,6 @@ export const getStateNames = async () => {
 
 export const getResort = async (slug: string) => {
   const response = await axios.get(`${baseUrl}/${slug}`);
-  const resortInfo: any = response.data;
+  const resortInfo: ResortInfo = response.data;
   return resortInfo;
 };

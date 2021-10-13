@@ -2,15 +2,13 @@ import Head from 'next/head';
 import TerrainOverview from '../../../components/CardContents/TerrainOverview';
 import InfoPageLayout from '../../../layouts/InfoPageLayout';
 import { getAllResortNames, getResort } from '../../../services/resortsService';
-import { ResortNameObj } from '../../../types';
+import { ResortInfo, ResortNameObj } from '../../../types';
 
 interface Props {
-  resortInfo: any;
+  resortInfo: ResortInfo;
 }
 
 const SkiResort = ({ resortInfo }: Props) => {
-  console.log(resortInfo);
-
   return (
     <div>
       <Head>
@@ -20,6 +18,7 @@ const SkiResort = ({ resortInfo }: Props) => {
       </Head>
       <InfoPageLayout>
         <TerrainOverview resortInfo={resortInfo} />
+        {/* <LiftsList resortInfo={resortInfo} /> */}
       </InfoPageLayout>
     </div>
   );

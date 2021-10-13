@@ -6,12 +6,15 @@ import NightSkiingSVG from './svg/NightSkiingSVG';
 import SkiableTerrainSVG from './svg/SkiableTerrainSVG';
 import SnowMakingSVG from './svg/SnowMakingSVG';
 import TotalRunsSVG from './svg/TotalRunsSVG';
+import { ResortInfo } from '../../../types';
 
-type Props = any;
+interface Props {
+  resortInfo: ResortInfo;
+}
 
 const TerrainOverview = ({ resortInfo }: Props) => {
-  const generateMiText = (text: string) => `${text} mi`;
-  const generateAcText = (text: string) => `${text} ac`;
+  const generateMiText = (text: string | number) => `${text} mi`;
+  const generateAcText = (text: string | number) => `${text} ac`;
 
   return (
     <InfoCardContainer title="Terrain Overview">
@@ -20,7 +23,7 @@ const TerrainOverview = ({ resortInfo }: Props) => {
           {resortInfo.runs && (
             <CardIcon
               text="Runs in Total"
-              bigText={resortInfo.runs}
+              bigText={resortInfo.runs.toString()}
               SVG={<TotalRunsSVG />}
             />
           )}

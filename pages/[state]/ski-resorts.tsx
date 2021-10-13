@@ -7,6 +7,7 @@ import {
 import InfoPageLayout from '../../layouts/InfoPageLayout';
 import { slugify } from '../../utilities/slug';
 import { ResortNameObj } from '../../types';
+import LiftsList from '../../components/CardContents/LiftsList';
 
 interface Props {
   resorts: ResortNameObj[];
