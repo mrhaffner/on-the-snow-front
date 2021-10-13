@@ -1,10 +1,20 @@
 @import '../../styles/mixins';
 
+.box {
+  padding: 12px 24px;
+
+  @media (max-width: 991.98px) {
+    padding-top: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
 .terrain_list {
-  padding: 36px 24px;
-  margin-bottom: 30px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 16px 16px 0;
 }
 
 .svg {

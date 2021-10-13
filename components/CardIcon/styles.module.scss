@@ -10,6 +10,11 @@
   align-items: center;
   text-align: center;
   position: relative;
+
+  @media (max-width: 991.98px) {
+    width: 33%;
+    flex-basis: 33%;
+  }
 }
 
 .big_text {

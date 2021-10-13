@@ -4,11 +4,12 @@ interface Props {
   title: string;
   children: JSX.Element;
   button?: JSX.Element;
+  hide?: boolean;
 }
 
-const InfoCardContainer = ({ title, children, button }: Props) => {
+const InfoCardContainer = ({ title, children, button, hide }: Props) => {
   return (
-    <div className={styles.hide}>
+    <div className={hide ? styles.hide : ''}>
       <div className={styles.spacer}>
         <article className={styles.list_box}>
           <div className={styles.title_box}>
