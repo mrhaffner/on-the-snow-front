@@ -6,9 +6,10 @@ import {
 } from '../../services/resortsService';
 import InfoPageLayout from '../../layouts/InfoPageLayout';
 import { slugify } from '../../utilities/slug';
+import { ResortNameObj } from '../../types';
 
 interface Props {
-  resorts: string[];
+  resorts: ResortNameObj[];
 }
 
 const StateSkiResorts = ({ resorts }: Props) => {

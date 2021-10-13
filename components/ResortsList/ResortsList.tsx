@@ -29,7 +29,7 @@ const ResortsList = ({ resorts }: Props) => {
             <ResortsColumn resortsList={res2} />
           </div>
         </article>
-        {!showMoreResorts && (
+        {!showMoreResorts && resorts.length > 22 && (
           <button
             type="button"
             className={styles.wide_button}
