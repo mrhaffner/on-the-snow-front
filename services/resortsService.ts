@@ -21,3 +21,9 @@ export const getStateNames = async () => {
   const stateList: string[] = response.data;
   return stateList;
 };
+
+export const getResort = async (slug: string) => {
+  const response = await axios.get(`${baseUrl}/${slug}`);
+  const resortInfo: any = response.data;
+  return resortInfo;
+};

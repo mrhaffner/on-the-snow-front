@@ -1,9 +1,10 @@
 import InfoCardContainer from '../InfoCardContainer';
+import styles from './styles.module.scss';
 
 const TerrainOverview = () => {
   return (
     <InfoCardContainer title="Terrain Overview">
-      <p>Hi</p>
+      <div className={styles.terrain_list}></div>
     </InfoCardContainer>
   );
 };
