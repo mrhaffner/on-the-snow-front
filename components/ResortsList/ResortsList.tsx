@@ -1,10 +1,11 @@
 import useToggle from '../../hooks/useToggle';
+import { ResortNameObj } from '../../types';
 import { getFirstHalf, getSecondHalf } from '../../utilities/arrays';
 import ResortsColumn from './ResortsColumn';
 import styles from './styles.module.scss';
 
 interface Props {
-  resorts: string[];
+  resorts: ResortNameObj[];
 }
 
 const ResortsList = ({ resorts }: Props) => {

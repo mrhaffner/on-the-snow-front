@@ -3,9 +3,10 @@ import ResortsList from '../components/ResortsList';
 import { getAllResortNames } from '../services/resortsService';
 import InfoPageLayout from '../layouts/InfoPageLayout';
 import styles from '../styles/Home.module.css';
+import { ResortNameObj } from '../types';
 
 interface Props {
-  resorts: string[];
+  resorts: ResortNameObj[];
 }
 
 const Home = ({ resorts }: Props) => {

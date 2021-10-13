@@ -3,7 +3,7 @@ export const slugify = (word: string) => {
     .toLowerCase()
     .replace(/[ _]/g, '-')
     .replace(/[^\w-]+/g, '');
-};
+}; // does this handle ' - ' and ' & ' ?
 
 // export const unSlugify = (word: string) => {
 //     return word
@@ -12,9 +12,9 @@ export const slugify = (word: string) => {
 //       .replace(/[^\w-]+/g, '');
 // }
 
-export const snakify = (word: string) => {
-  return word
-    .toLowerCase()
-    .replace(/[- ]/g, '_')
-    .replace(/[^\w-]+/g, '');
-};
+// export const snakify = (word: string) => {
+//   return word
+//     .toLowerCase()
+//     .replace(/[- ]/g, '_')
+//     .replace(/[^\w-]+/g, '');
+// };

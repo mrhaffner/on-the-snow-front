@@ -1,16 +1,16 @@
 import styles from './styles.module.scss';
-import { slugify } from '../../utilities/slug';
 import Link from 'next/link';
+import { ResortNameObj } from '../../types';
 
 interface Props {
-  resortsList: string[];
+  resortsList: ResortNameObj[];
 }
 
 const ResortsColumn = ({ resortsList }: Props) => (
   <div className={styles.column}>
-    {resortsList.map((name: string) => (
-      <Link href={`/${slugify(name)}`} key={name}>
-        <a className={styles.resort_link}>{name}</a>
+    {resortsList.map((resort: ResortNameObj) => (
+      <Link href={`/${resort.id}`} key={resort.id}>
+        <a className={styles.resort_link}>{resort.name}</a>
       </Link>
     ))}
   </div>
