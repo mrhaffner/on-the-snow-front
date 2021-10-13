@@ -1,7 +1,7 @@
-import useToggle from '../../hooks/useToggle';
-import { ResortNameObj } from '../../types';
-import { getFirstHalf, getSecondHalf } from '../../utilities/arrays';
-import InfoCardContainer from '../InfoCardContainer';
+import useToggle from '../../../hooks/useToggle';
+import { ResortNameObj } from '../../../types';
+import { getFirstHalf, getSecondHalf } from '../../../utilities/arrays';
+import InfoCardContainer from '../../InfoCardContainer';
 import ResortsColumn from './ResortsColumn';
 import ShowButton from './ShowButton';
 import styles from './styles.module.scss';

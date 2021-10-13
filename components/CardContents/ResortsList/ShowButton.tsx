@@ -1,4 +1,4 @@
-import { ResortNameObj } from '../../types';
+import { ResortNameObj } from '../../../types';
 import styles from './styles.module.scss';
 
 interface Props {

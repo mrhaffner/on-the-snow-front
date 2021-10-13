@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import TerrainOverview from '../../../components/TerrainOverview';
+import TerrainOverview from '../../../components/CardContents/TerrainOverview';
 import InfoPageLayout from '../../../layouts/InfoPageLayout';
 import { getAllResortNames, getResort } from '../../../services/resortsService';
 import { ResortNameObj } from '../../../types';

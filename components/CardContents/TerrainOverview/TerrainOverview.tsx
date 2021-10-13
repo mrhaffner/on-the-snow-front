@@ -1,5 +1,5 @@
 import CardIcon from '../CardIcon';
-import InfoCardContainer from '../InfoCardContainer';
+import InfoCardContainer from '../../InfoCardContainer';
 import styles from './styles.module.scss';
 import LongestRunSVG from './svg/LongestRunSVG';
 import NightSkiingSVG from './svg/NightSkiingSVG';

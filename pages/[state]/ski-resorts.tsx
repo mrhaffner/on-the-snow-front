@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import ResortsList from '../../components/ResortsList';
+import ResortsList from '../../components/CardContents/ResortsList';
 import {
   getStateNames,
   getStateResortNames,

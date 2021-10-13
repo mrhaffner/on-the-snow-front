@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import ResortsList from '../components/ResortsList';
+import ResortsList from '../components/CardContents/ResortsList';
 import { getAllResortNames } from '../services/resortsService';
 import InfoPageLayout from '../layouts/InfoPageLayout';
 import styles from '../styles/Home.module.css';

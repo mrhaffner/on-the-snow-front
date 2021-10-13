@@ -1,6 +1,6 @@
 import styles from './styles.module.scss';
 import Link from 'next/link';
-import { ResortNameObj } from '../../types';
+import { ResortNameObj } from '../../../types';
 
 interface Props {
   resortsList: ResortNameObj[];

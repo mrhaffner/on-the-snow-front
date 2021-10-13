@@ -1,4 +1,4 @@
-import NavBar from '../../components/NavBar';
+import NavBar from '../../components/Nav/NavBar';
 import styles from './styles.module.scss';
 
 interface Props {
