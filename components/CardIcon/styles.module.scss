@@ -1,0 +1,26 @@
+@import '../../styles/mixins';
+
+.icon_container {
+  flex: 1 1;
+  width: 20%;
+  flex-basis: 20%;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.big_text {
+  font-size: 1.125rem;
+  line-height: 1.6875rem;
+  font-weight: 700;
+  color: #006fac;
+}
+
+.text {
+  color: #304769;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+}

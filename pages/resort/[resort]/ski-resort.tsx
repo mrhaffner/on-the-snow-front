@@ -19,7 +19,7 @@ const SkiResort = ({ resortInfo }: Props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <InfoPageLayout>
-        <TerrainOverview />
+        <TerrainOverview resortInfo={resortInfo} />
       </InfoPageLayout>
     </div>
   );
