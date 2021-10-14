@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import LiftsList from '../../../components/CardContents/LiftsList';
 import TerrainOverview from '../../../components/CardContents/TerrainOverview';
 import InfoPageLayout from '../../../layouts/InfoPageLayout';
 import { getAllResortNames, getResort } from '../../../services/resortsService';
@@ -17,8 +18,10 @@ const SkiResort = ({ resortInfo }: Props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <InfoPageLayout>
-        <TerrainOverview resortInfo={resortInfo} />
-        {/* <LiftsList resortInfo={resortInfo} /> */}
+        <>
+          <TerrainOverview resortInfo={resortInfo} />
+          <LiftsList resortInfo={resortInfo} />
+        </>
       </InfoPageLayout>
     </div>
   );

@@ -1,4 +1,4 @@
-.icon_container {
+.terrain_container {
   flex: 1 1;
   width: 20%;
   flex-basis: 20%;
@@ -12,6 +12,21 @@
   @media (max-width: 991.98px) {
     width: 33%;
     flex-basis: 33%;
+  }
+}
+
+.lift_container {
+  flex-basis: 25%;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+
+  @media (max-width: 767.98px) {
+    flex-basis: 33%;
+    justify-content: space-between;
   }
 }
 

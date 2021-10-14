@@ -1,0 +1,18 @@
+.lift_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 32px 20px 0;
+
+  //   @media (max-width: 991.98px) {
+  //     padding-top: 0;
+  //     padding-left: 10px;
+  //     padding-right: 10px;
+  //   }
+}
+
+.svg {
+  height: 48px;
+  margin-bottom: 18px;
+  fill: #006fac;
+}

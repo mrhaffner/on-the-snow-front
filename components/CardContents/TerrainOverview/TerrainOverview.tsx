@@ -25,6 +25,7 @@ const TerrainOverview = ({ resortInfo }: Props) => {
               text="Runs in Total"
               bigText={resortInfo.runs.toString()}
               SVG={<TotalRunsSVG />}
+              type="terrain"
             />
           )}
           {resortInfo.longest_run && (
@@ -32,6 +33,7 @@ const TerrainOverview = ({ resortInfo }: Props) => {
               text="Longest Run"
               bigText={generateMiText(resortInfo.longest_run)}
               SVG={<LongestRunSVG />}
+              type="terrain"
             />
           )}
           {resortInfo.skiable_terrain && (
@@ -39,6 +41,7 @@ const TerrainOverview = ({ resortInfo }: Props) => {
               text="Skiable Terrain"
               bigText={generateAcText(resortInfo.skiable_terrain)}
               SVG={<SkiableTerrainSVG />}
+              type="terrain"
             />
           )}
           {resortInfo.mi_night_skiing && (
@@ -46,6 +49,7 @@ const TerrainOverview = ({ resortInfo }: Props) => {
               text="Night Skiing"
               bigText={generateAcText(resortInfo.mi_night_skiing)}
               SVG={<NightSkiingSVG />}
+              type="terrain"
             />
           )}
           {resortInfo.snow_making && (
@@ -53,6 +57,7 @@ const TerrainOverview = ({ resortInfo }: Props) => {
               text="Snow Making"
               bigText={generateAcText(resortInfo.snow_making)}
               SVG={<SnowMakingSVG />}
+              type="terrain"
             />
           )}
         </div>
