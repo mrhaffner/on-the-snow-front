@@ -9,7 +9,10 @@ interface Props {
 const ResortsColumn = ({ resortsList }: Props) => (
   <div className={styles.column}>
     {resortsList.map((resort: ResortNameObj) => (
-      <Link href={`/${resort.id}`} key={resort.id}>
+      <Link
+        href={`/${resort.state_slug}/${resort.id}/ski-resort`}
+        key={resort.id}
+      >
         <a className={styles.resort_link}>{resort.name}</a>
       </Link>
     ))}

@@ -30,7 +30,7 @@ const SkiResort = ({ resortInfo }: Props) => {
 export const getStaticPaths = async () => {
   const resorts = await getAllResortNames();
   const paths = resorts.map(
-    (resort: ResortNameObj) => `/resort/${resort.id}/ski-resort`,
+    (resort: ResortNameObj) => `/${resort.state_slug}/${resort.id}/ski-resort`,
   );
   return { paths, fallback: false };
 };

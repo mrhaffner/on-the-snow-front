@@ -1,6 +1,7 @@
 export type ResortNameObj = {
   id: string;
   name: string;
+  state_slug: string;
 };
 
 export type ResortInfo = {
