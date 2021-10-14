@@ -35,3 +35,11 @@ export type ResortInfo = {
   vertical_drop: number | null;
   years_open: number | null;
 };
+
+type ParamsObj = {
+  [key: string]: string;
+};
+
+export interface StaticProps {
+  params: ParamsObj;
+}

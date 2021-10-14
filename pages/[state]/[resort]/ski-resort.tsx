@@ -3,13 +3,9 @@ import LiftsList from '../../../components/CardContents/LiftsList';
 import TerrainOverview from '../../../components/CardContents/TerrainOverview';
 import InfoPageLayout from '../../../layouts/InfoPageLayout';
 import { getAllResortNames, getResort } from '../../../services/resortsService';
-import { ResortInfo, ResortNameObj } from '../../../types';
+import { ResortInfo, ResortNameObj, StaticProps } from '../../../types';
 
-interface Props {
-  resortInfo: ResortInfo;
-}
-
-const SkiResort = ({ resortInfo }: Props) => {
+const SkiResort = (resortInfo: ResortInfo) => {
   return (
     <div>
       <Head>
@@ -35,19 +31,11 @@ export const getStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
-type SlugParams = {
-  resort: string;
-};
-
-interface Props {
-  params: SlugParams;
-}
-
-export const getStaticProps = async ({ params }: Props) => {
+export const getStaticProps = async ({ params }: StaticProps) => {
   const { resort } = params;
   const resortInfo = await getResort(resort);
   return {
-    props: { resortInfo },
+    props: resortInfo,
   };
 };
 

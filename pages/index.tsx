@@ -2,14 +2,9 @@ import Head from 'next/head';
 import ResortsList from '../components/CardContents/ResortsList';
 import { getAllResortNames } from '../services/resortsService';
 import InfoPageLayout from '../layouts/InfoPageLayout';
-import styles from '../styles/Home.module.css';
 import { ResortNameObj } from '../types';
 
-interface Props {
-  resorts: ResortNameObj[];
-}
-
-const Home = ({ resorts }: Props) => {
+const Home = (resorts: ResortNameObj[]) => {
   return (
     <div>
       <Head>
@@ -27,7 +22,7 @@ const Home = ({ resorts }: Props) => {
 export const getStaticProps = async () => {
   const resorts = await getAllResortNames();
   return {
-    props: { resorts },
+    props: resorts,
   };
 };
 

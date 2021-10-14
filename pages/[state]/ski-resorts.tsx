@@ -6,14 +6,9 @@ import {
 } from '../../services/resortsService';
 import InfoPageLayout from '../../layouts/InfoPageLayout';
 import { slugify } from '../../utilities/slug';
-import { ResortNameObj } from '../../types';
-import LiftsList from '../../components/CardContents/LiftsList';
+import { ResortNameObj, StaticProps } from '../../types';
 
-interface Props {
-  resorts: ResortNameObj[];
-}
-
-const StateSkiResorts = ({ resorts }: Props) => {
+const StateSkiResorts = (resorts: ResortNameObj[]) => {
   return (
     <div>
       <Head>
@@ -34,19 +29,11 @@ export const getStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
-type StateParams = {
-  state: string;
-};
-
-interface Props {
-  params: StateParams;
-}
-
-export const getStaticProps = async ({ params }: Props) => {
+export const getStaticProps = async ({ params }: StaticProps) => {
   const { state } = params;
   const resorts = await getStateResortNames(state);
   return {
-    props: { resorts },
+    props: resorts,
   };
 };
 
