@@ -29,70 +29,70 @@ const LiftsList = ({ resortInfo }: Props) => {
   return (
     <InfoCardContainer title={title}>
       <div className={styles.lift_list}>
-        {resortInfo.trams && (
+        {resortInfo.trams ? (
           <CardIcon
             text="Gondolas & Trams"
             bigText={resortInfo.trams.toString()}
             SVG={<TramSVG />}
             type="lift"
           />
-        )}
-        {resortInfo.fast_eights && (
+        ) : null}
+        {resortInfo.fast_eights ? (
           <CardIcon
             text="Eight Person Lifts"
             bigText={resortInfo.fast_eights.toString()}
             SVG={<EightSVG />}
             type="lift"
           />
-        )}
-        {resortInfo.fast_sixes && (
+        ) : null}
+        {resortInfo.fast_sixes ? (
           <CardIcon
             text="High Speed Sixes"
             bigText={resortInfo.fast_sixes.toString()}
             SVG={<HSSixSVG />}
             type="lift"
           />
-        )}
-        {resortInfo.fast_quads && (
+        ) : null}
+        {resortInfo.fast_quads ? (
           <CardIcon
             text="High Speed Quads"
             bigText={resortInfo.fast_quads.toString()}
             SVG={<HSQuadSVG />}
             type="lift"
           />
-        )}
-        {resortInfo.quad && (
+        ) : null}
+        {resortInfo.quad ? (
           <CardIcon
             text="Quad Chairs"
             bigText={resortInfo.quad.toString()}
             SVG={<QuadSVG />}
             type="lift"
           />
-        )}
-        {resortInfo.triple && (
+        ) : null}
+        {resortInfo.triple ? (
           <CardIcon
             text="Triple Chairs"
             bigText={resortInfo.triple.toString()}
             SVG={<TripleSVG />}
             type="lift"
           />
-        )}
-        {resortInfo.double && (
+        ) : null}
+        {resortInfo.double ? (
           <CardIcon
             text="Double Chairs"
             bigText={resortInfo.double.toString()}
             SVG={<DoubleSVG />}
             type="lift"
           />
-        )}
-        {resortInfo.surface && (
+        ) : null}
+        {resortInfo.surface ? (
           <CardIcon
             text="Surface Lifts"
             bigText={resortInfo.surface.toString()}
             SVG={<SurfaceSVG />}
             type="lift"
           />
-        )}
+        ) : null}
       </div>
     </InfoCardContainer>
   );
