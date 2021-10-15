@@ -5,12 +5,12 @@ export const slugify = (word: string) => {
     .replace(/[^\w-]+/g, '');
 }; // does this handle ' - ' and ' & ' ?
 
-// export const unSlugify = (word: string) => {
-//     return word
-//       .toLowerCase()
-//       .replace(/ /g, '-')
-//       .replace(/[^\w-]+/g, '');
-// }
+export const unslugify = (slug: string) => {
+  const result = slug.replace(/\-/g, ' ');
+  return result.replace(/\w\S*/g, (txt) => {
+    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+  });
+};
 
 // export const snakify = (word: string) => {
 //   return word

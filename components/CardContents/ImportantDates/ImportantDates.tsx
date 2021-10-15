@@ -7,27 +7,25 @@ interface Props {
   resortInfo: ResortInfo;
 }
 
-const ImportantDates = ({ resortInfo }: Props) => {
-  return (
-    <InfoCardContainer title="Important Dates">
-      <div className={styles.list_container}>
-        <div className={styles.row}>
-          <ListItem
-            bigText={resortInfo.days_open_last_year?.toString() || '?'}
-            text="Days Open Last Year"
-          />
-          <ListItem
-            bigText={resortInfo.years_open?.toString() || '?'}
-            text="Years Open"
-          />
-          <ListItem
-            bigText={`${resortInfo.average_snowfall}"`}
-            text="AverageSnowfall"
-          />
-        </div>
+const ImportantDates = ({ resortInfo }: Props) => (
+  <InfoCardContainer title="Important Dates">
+    <div className={styles.list_container}>
+      <div className={styles.row}>
+        <ListItem
+          bigText={resortInfo.days_open_last_year?.toString() || '?'}
+          text="Days Open Last Year"
+        />
+        <ListItem
+          bigText={resortInfo.years_open?.toString() || '?'}
+          text="Years Open"
+        />
+        <ListItem
+          bigText={`${resortInfo.average_snowfall}"`}
+          text="AverageSnowfall"
+        />
       </div>
-    </InfoCardContainer>
-  );
-};
+    </div>
+  </InfoCardContainer>
+);
 
 export default ImportantDates;
