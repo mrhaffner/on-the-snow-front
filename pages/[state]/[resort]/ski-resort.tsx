@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Elevation from '../../../components/CardContents/Elevation';
+import ImportantDates from '../../../components/CardContents/ImportantDates';
 import LiftsList from '../../../components/CardContents/LiftsList';
 import TerrainOverview from '../../../components/CardContents/TerrainOverview';
 import InfoPageLayout from '../../../layouts/InfoPageLayout';
@@ -23,6 +24,7 @@ const SkiResort = ({ resortInfo }: Props) => {
           <TerrainOverview resortInfo={resortInfo} />
           <LiftsList resortInfo={resortInfo} />
           <Elevation resortInfo={resortInfo} />
+          <ImportantDates resortInfo={resortInfo} />
         </>
       </InfoPageLayout>
     </div>
