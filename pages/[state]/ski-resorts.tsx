@@ -8,7 +8,11 @@ import InfoPageLayout from '../../layouts/InfoPageLayout';
 import { slugify } from '../../utilities/slug';
 import { ResortNameObj, StaticProps } from '../../types';
 
-const StateSkiResorts = (resorts: ResortNameObj[]) => {
+interface Props {
+  resorts: ResortNameObj[];
+}
+
+const StateSkiResorts = ({ resorts }: Props) => {
   return (
     <div>
       <Head>
@@ -33,7 +37,7 @@ export const getStaticProps = async ({ params }: StaticProps) => {
   const { state } = params;
   const resorts = await getStateResortNames(state);
   return {
-    props: resorts,
+    props: { resorts },
   };
 };
 

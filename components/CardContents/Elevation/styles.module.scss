@@ -1,0 +1,14 @@
+.elevation_list {
+  display: flex;
+  justify-content: space-around;
+  padding: 32px;
+
+  @media (max-width: 767.98px) {
+    padding: 0;
+  }
+}
+
+.svg {
+  height: auto;
+  fill: #006fac;
+}

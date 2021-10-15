@@ -6,7 +6,7 @@ export type ResortNameObj = {
 
 export type ResortInfo = {
   average_snowfall: number | null;
-  base: number | null;
+  base: number;
   days_open_last_year: number | null;
   double: number | null;
   fast_eights: number | null;
@@ -25,14 +25,14 @@ export type ResortInfo = {
   skiable_terrain: number | null;
   snow_making: number | null;
   state: string | null;
-  summit: number | null;
+  summit: number;
   surface: number | null;
   terrain_parks: number | null;
   total: number | null;
   trams: number | null;
   triple: number | null;
   url: string | null;
-  vertical_drop: number | null;
+  vertical_drop: number;
   years_open: number | null;
 };
 

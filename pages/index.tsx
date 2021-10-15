@@ -4,7 +4,11 @@ import { getAllResortNames } from '../services/resortsService';
 import InfoPageLayout from '../layouts/InfoPageLayout';
 import { ResortNameObj } from '../types';
 
-const Home = (resorts: ResortNameObj[]) => {
+interface Props {
+  resorts: ResortNameObj[];
+}
+
+const Home = ({ resorts }: Props) => {
   return (
     <div>
       <Head>
@@ -22,7 +26,7 @@ const Home = (resorts: ResortNameObj[]) => {
 export const getStaticProps = async () => {
   const resorts = await getAllResortNames();
   return {
-    props: resorts,
+    props: { resorts },
   };
 };
 

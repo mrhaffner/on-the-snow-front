@@ -1,11 +1,16 @@
 import Head from 'next/head';
+import Elevation from '../../../components/CardContents/Elevation';
 import LiftsList from '../../../components/CardContents/LiftsList';
 import TerrainOverview from '../../../components/CardContents/TerrainOverview';
 import InfoPageLayout from '../../../layouts/InfoPageLayout';
 import { getAllResortNames, getResort } from '../../../services/resortsService';
 import { ResortInfo, ResortNameObj, StaticProps } from '../../../types';
 
-const SkiResort = (resortInfo: ResortInfo) => {
+interface Props {
+  resortInfo: ResortInfo;
+}
+
+const SkiResort = ({ resortInfo }: Props) => {
   return (
     <div>
       <Head>
@@ -17,6 +22,7 @@ const SkiResort = (resortInfo: ResortInfo) => {
         <>
           <TerrainOverview resortInfo={resortInfo} />
           <LiftsList resortInfo={resortInfo} />
+          <Elevation resortInfo={resortInfo} />
         </>
       </InfoPageLayout>
     </div>
@@ -35,7 +41,7 @@ export const getStaticProps = async ({ params }: StaticProps) => {
   const { resort } = params;
   const resortInfo = await getResort(resort);
   return {
-    props: resortInfo,
+    props: { resortInfo },
   };
 };
 
