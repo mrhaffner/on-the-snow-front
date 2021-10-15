@@ -20,6 +20,9 @@ const InfoPageLayout = ({ link, linkText, title, children }: Props) => {
           <aside className={styles.aside}></aside>
         </div>
       </div>
+      <div>
+        <div className={styles.bottom_graphic}></div>
+      </div>
     </>
   );
 };
