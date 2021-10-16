@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import useDebounce from '../../../hooks/useDebounce';
 import { ResortNameObj } from '../../../types';
 import { filterObjArr, filterStringArr } from '../../../utilities/arrays';
 import SearchResults from './SearchResults';
@@ -15,6 +16,7 @@ const SearchPopUp = ({ setShowSearchPopUp, resorts, states }: Props) => {
   const [input, setInput] = useState('');
   const [stateResults, setStateResults] = useState<string[]>([]);
   const [resortResults, setResortResults] = useState<ResortNameObj[]>([]);
+  const debouncedInput = useDebounce(input, 500);
 
   useEffect(() => {
     if (input !== '') setShowResults(true);
@@ -32,9 +34,9 @@ const SearchPopUp = ({ setShowSearchPopUp, resorts, states }: Props) => {
       return;
     }
 
-    setStateResults(filterStringArr(input, states));
-    setResortResults(filterObjArr(input, resorts));
-  }, [input]);
+    setStateResults(filterStringArr(debouncedInput, states));
+    setResortResults(filterObjArr(debouncedInput, resorts));
+  }, [debouncedInput]);
 
   return (
     <div
