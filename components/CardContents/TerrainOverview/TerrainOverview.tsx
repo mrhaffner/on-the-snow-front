@@ -20,46 +20,46 @@ const TerrainOverview = ({ resortInfo }: Props) => {
     <InfoCardContainer title="Terrain Overview">
       <div className={styles.box}>
         <div className={styles.terrain_list}>
-          {resortInfo.runs && (
+          {resortInfo.runs ? (
             <CardIcon
               text="Runs in Total"
               bigText={resortInfo.runs.toString()}
               SVG={<TotalRunsSVG />}
               type="terrain"
             />
-          )}
-          {resortInfo.longest_run && (
+          ) : null}
+          {resortInfo.longest_run ? (
             <CardIcon
               text="Longest Run"
               bigText={generateMiText(resortInfo.longest_run)}
               SVG={<LongestRunSVG />}
               type="terrain"
             />
-          )}
-          {resortInfo.skiable_terrain && (
+          ) : null}
+          {resortInfo.skiable_terrain ? (
             <CardIcon
               text="Skiable Terrain"
               bigText={generateAcText(resortInfo.skiable_terrain)}
               SVG={<SkiableTerrainSVG />}
               type="terrain"
             />
-          )}
-          {resortInfo.mi_night_skiing && (
+          ) : null}
+          {resortInfo.mi_night_skiing ? (
             <CardIcon
               text="Night Skiing"
               bigText={generateAcText(resortInfo.mi_night_skiing)}
               SVG={<NightSkiingSVG />}
               type="terrain"
             />
-          )}
-          {resortInfo.snow_making && (
+          ) : null}
+          {resortInfo.snow_making ? (
             <CardIcon
               text="Snow Making"
               bigText={generateAcText(resortInfo.snow_making)}
               SVG={<SnowMakingSVG />}
               type="terrain"
             />
-          )}
+          ) : null}
         </div>
       </div>
     </InfoCardContainer>
