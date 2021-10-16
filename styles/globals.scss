@@ -2,6 +2,7 @@ html,
 body {
   font-family: Poppins, Helvetica, sans-serif;
   background-color: #fff;
+  min-height: 100vh;
 }
 
 a {
@@ -24,4 +25,10 @@ input[type='reset'] {
   font: inherit;
   cursor: pointer;
   outline: inherit;
+}
+
+#__next {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
 }
