@@ -1,12 +1,12 @@
 import styles from './styles.module.scss';
 
 interface Props {
-  toggleSearchPopUp: () => void;
+  setShowSearchPopUp: (input: boolean) => void;
 }
 
-const SearchBar = ({ toggleSearchPopUp }: Props) => {
+const SearchBar = ({ setShowSearchPopUp }: Props) => {
   return (
-    <form className={styles.searchbar} onClick={toggleSearchPopUp}>
+    <form className={styles.searchbar} onClick={() => setShowSearchPopUp(true)}>
       <input type="search" name="search" placeholder="Search" readOnly></input>
       <button type="button" title="Search">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

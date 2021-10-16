@@ -15,19 +15,19 @@ import {
 } from '../../../services/resortsService';
 import { ResortNameObj } from '../../../types';
 import { unslugify } from '../../../utilities/slug';
+import { useRouter } from 'next/router';
 
 const NavBar = () => {
   const [showMobileMenu, toggleMobileMenu] = useToggle();
-  const [showSearchPopUp, toggleSearchPopUp] = useToggle();
+  const [showSearchPopUp, setShowSearchPopUp] = useState(false);
 
   const [states, setStates] = useState<string[]>([]);
-  const [resorts, setResorts] = useState<string[]>([]);
+  const [resorts, setResorts] = useState<ResortNameObj[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
       const resortsData = await getAllResortNames();
-      const cleanedResorts = resortsData.map((x: ResortNameObj) => x.name);
-      setResorts(cleanedResorts);
+      setResorts(resortsData);
 
       const statesData = await getStateNames();
       const cleanedState = statesData.map((x: string) => unslugify(x));
@@ -35,6 +35,12 @@ const NavBar = () => {
     };
     fetchData();
   }, []);
+
+  const router = useRouter();
+
+  useEffect(() => {
+    setShowSearchPopUp(false);
+  }, [router]);
 
   return (
     <nav className={styles.navbox}>
@@ -48,11 +54,11 @@ const NavBar = () => {
           </div>
         </div>
         <div className={styles.nav_group}>
-          <SearchBar toggleSearchPopUp={toggleSearchPopUp} />
+          <SearchBar setShowSearchPopUp={setShowSearchPopUp} />
           <div className={styles.lang_pick_spacer}>
             <LanguagePicker />
           </div>
-          <SearchToggle toggleSearchPopUp={toggleSearchPopUp} />
+          <SearchToggle setShowSearchPopUp={setShowSearchPopUp} />
           <BurgerMenu toggleMobileMenu={toggleMobileMenu} />
         </div>
       </div>
@@ -62,7 +68,7 @@ const NavBar = () => {
       />
       {showSearchPopUp && (
         <SearchPopUp
-          toggleSearchPopUp={toggleSearchPopUp}
+          setShowSearchPopUp={setShowSearchPopUp}
           resorts={resorts}
           states={states}
         />

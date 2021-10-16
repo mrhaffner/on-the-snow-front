@@ -1,25 +1,39 @@
 import { useEffect, useState } from 'react';
+import { ResortNameObj } from '../../../types';
+import { filterObjArr, filterStringArr } from '../../../utilities/arrays';
 import SearchResults from './SearchResults';
 import styles from './styles.module.scss';
 
 interface Props {
-  toggleSearchPopUp: () => void;
-  resorts: string[];
+  setShowSearchPopUp: (input: boolean) => void;
+  resorts: ResortNameObj[];
   states: string[];
 }
 
-const SearchPopUp = ({ toggleSearchPopUp, resorts, states }: Props) => {
+const SearchPopUp = ({ setShowSearchPopUp, resorts, states }: Props) => {
   const [showResults, setShowResults] = useState(false);
   const [input, setInput] = useState('');
+  const [stateResults, setStateResults] = useState<string[]>([]);
+  const [resortResults, setResortResults] = useState<ResortNameObj[]>([]);
 
   useEffect(() => {
     if (input !== '') setShowResults(true);
   }, [input]);
-
+  ////////////////////////////////////////any
   const handleChange = (e: any) => {
     setInput(e.target.value);
   };
-  console.log(states, resorts);
+
+  useEffect(() => {
+    if (input === '') {
+      setStateResults([]);
+      setResortResults([]);
+      return;
+    }
+
+    setStateResults(filterStringArr(input, states));
+    setResortResults(filterObjArr(input, resorts));
+  }, [input]);
 
   return (
     <div
@@ -48,7 +62,7 @@ const SearchPopUp = ({ toggleSearchPopUp, resorts, states }: Props) => {
         type="button"
         aria-label="close search"
         className={styles.close_button}
-        onClick={toggleSearchPopUp}
+        onClick={() => setShowSearchPopUp(false)}
       ></button>
       <section className={styles.info_text}>
         {!showResults && (
@@ -56,7 +70,12 @@ const SearchPopUp = ({ toggleSearchPopUp, resorts, states }: Props) => {
             Search resorts, regions, pass programs, articles etc.
           </h2>
         )}
-        {showResults && <SearchResults input={input} results={['hi']} />}
+        {showResults && (
+          <SearchResults
+            stateResults={stateResults}
+            resortResults={resortResults}
+          />
+        )}
       </section>
     </div>
   );

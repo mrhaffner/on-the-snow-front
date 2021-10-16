@@ -4,19 +4,18 @@ import Link from 'next/link';
 
 interface Props {
   result: string;
-  link1: string;
-  link2: string;
+  link: string;
 }
 
-const Result = ({ result, link1, link2 }: Props) => {
+const Result = ({ result, link }: Props) => {
   return (
     <div className={styles.result}>
       {unslugify(result)} ({' '}
-      <Link href={link1}>
+      <Link href={link}>
         <a>Snow Report</a>
       </Link>{' '}
       |{' '}
-      <Link href={link2}>
+      <Link href={link}>
         <a>Trip Planning</a>
       </Link>{' '}
       )
