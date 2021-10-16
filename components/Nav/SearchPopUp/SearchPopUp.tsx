@@ -19,9 +19,10 @@ const SearchPopUp = ({ setShowSearchPopUp, resorts, states }: Props) => {
   useEffect(() => {
     if (input !== '') setShowResults(true);
   }, [input]);
-  ////////////////////////////////////////any
-  const handleChange = (e: any) => {
-    setInput(e.target.value);
+
+  const handleChange = (e: React.FormEvent<EventTarget>) => {
+    let target = e.target as HTMLInputElement;
+    setInput(target.value as string);
   };
 
   useEffect(() => {
