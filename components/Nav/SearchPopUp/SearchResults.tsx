@@ -10,13 +10,13 @@ const SearchResults = ({ input, results }: Props) => {
   return (
     <div className={styles.columns}>
       <div className={styles.category}>
-        <h2 className={styles.category}>Regions</h2>
+        <h2 className={styles.category_text}>Regions</h2>
         {results.map((result: string) => (
           <Result result={result} link1="/" link2="/" />
         ))}
       </div>
       <div className={styles.category}>
-        <h2 className={styles.category}>Resorts</h2>
+        <h2 className={styles.category_text}>Resorts</h2>
         {results.map((result: string) => (
           <Result result={result} link1="/" link2="/" />
         ))}
