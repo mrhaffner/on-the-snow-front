@@ -22,7 +22,7 @@ const ResortsList = ({ resorts }: Props) => {
   const Button = ShowButton({ resorts, showMoreResorts, setShowMoreResorts });
 
   return (
-    <InfoCardContainer title="All Resorts" button={Button} hide={true}>
+    <InfoCardContainer title="All Resorts" button={Button}>
       <div className={styles.resort_list}>
         <ResortsColumn resortsList={res1} />
         <ResortsColumn resortsList={res2} />

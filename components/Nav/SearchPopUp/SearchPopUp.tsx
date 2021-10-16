@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+import SearchResults from './SearchResults';
 import styles from './styles.module.scss';
 
 interface Props {
@@ -5,6 +7,17 @@ interface Props {
 }
 
 const SearchPopUp = ({ toggleSearchPopUp }: Props) => {
+  const [showResults, setShowResults] = useState(false);
+  const [input, setInput] = useState('');
+
+  useEffect(() => {
+    if (input !== '') setShowResults(true);
+  }, [input]);
+
+  const handleChange = (e: any) => {
+    setInput(e.target.value);
+  };
+
   return (
     <div
       role="dialog"
@@ -23,6 +36,7 @@ const SearchPopUp = ({ toggleSearchPopUp }: Props) => {
             <input
               type="text"
               placeholder="Search resorts, regions, pass programs, articles etc."
+              onChange={handleChange}
             />
           </form>
         </div>
@@ -34,7 +48,12 @@ const SearchPopUp = ({ toggleSearchPopUp }: Props) => {
         onClick={toggleSearchPopUp}
       ></button>
       <section className={styles.info_text}>
-        <h2>Search resorts, regions, pass programs, articles etc.</h2>
+        {!showResults && (
+          <h2 className={styles.directions}>
+            Search resorts, regions, pass programs, articles etc.
+          </h2>
+        )}
+        {showResults && <SearchResults input={input} results={['hi']} />}
       </section>
     </div>
   );
