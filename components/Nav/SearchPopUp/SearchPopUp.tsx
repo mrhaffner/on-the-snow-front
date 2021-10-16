@@ -4,9 +4,11 @@ import styles from './styles.module.scss';
 
 interface Props {
   toggleSearchPopUp: () => void;
+  resorts: string[];
+  states: string[];
 }
 
-const SearchPopUp = ({ toggleSearchPopUp }: Props) => {
+const SearchPopUp = ({ toggleSearchPopUp, resorts, states }: Props) => {
   const [showResults, setShowResults] = useState(false);
   const [input, setInput] = useState('');
 
@@ -17,6 +19,7 @@ const SearchPopUp = ({ toggleSearchPopUp }: Props) => {
   const handleChange = (e: any) => {
     setInput(e.target.value);
   };
+  console.log(states, resorts);
 
   return (
     <div

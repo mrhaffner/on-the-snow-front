@@ -8,13 +8,33 @@ import MobileMenu from '../MobileMenu';
 import SearchBar from './SearchBar';
 import SearchToggle from './SearchToggle';
 import styles from './styles.module.scss';
-
-//eventually needs state to control what links are active
-//there will never be a working Magazine
+import { useEffect, useState } from 'react';
+import {
+  getAllResortNames,
+  getStateNames,
+} from '../../../services/resortsService';
+import { ResortNameObj } from '../../../types';
+import { unslugify } from '../../../utilities/slug';
 
 const NavBar = () => {
   const [showMobileMenu, toggleMobileMenu] = useToggle();
   const [showSearchPopUp, toggleSearchPopUp] = useToggle();
+
+  const [states, setStates] = useState<string[]>([]);
+  const [resorts, setResorts] = useState<string[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const resortsData = await getAllResortNames();
+      const cleanedResorts = resortsData.map((x: ResortNameObj) => x.name);
+      setResorts(cleanedResorts);
+
+      const statesData = await getStateNames();
+      const cleanedState = statesData.map((x: string) => unslugify(x));
+      setStates(cleanedState);
+    };
+    fetchData();
+  }, []);
 
   return (
     <nav className={styles.navbox}>
@@ -40,7 +60,13 @@ const NavBar = () => {
         toggleMobileMenu={toggleMobileMenu}
         showMobileMenu={showMobileMenu}
       />
-      {showSearchPopUp && <SearchPopUp toggleSearchPopUp={toggleSearchPopUp} />}
+      {showSearchPopUp && (
+        <SearchPopUp
+          toggleSearchPopUp={toggleSearchPopUp}
+          resorts={resorts}
+          states={states}
+        />
+      )}
     </nav>
   );
 };
